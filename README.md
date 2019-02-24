@@ -1,6 +1,15 @@
 # Roles and abilities
 
 
+composer.json
+```
+"autoload": {
+        "psr-4": {
+            "RoleCms\\": "modules/roleCms/src/"
+        }
+}
+```
+
 config/app.php
 
 ```

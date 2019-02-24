@@ -10,10 +10,10 @@ class UsersTableSeeder extends Seeder {
      * @return void
      */
     public function run() {
-        $users = ['patryk@redicon.pl', 'lukasz@redicon.pl', 'andrzej@redicon.pl'];
+        $users = ['patryk@redicon.pl'];
         foreach($users as $user) {
             DB::table('users')->insert([
-                'name' => 'redicon',
+                'name' => 'patryk',
                 'email' => $user,
                 'password' => bcrypt(env('PASSWORD')),
                 'roles_id' => 1,

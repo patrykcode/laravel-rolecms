@@ -13,7 +13,7 @@ trait HasRoleCms {
     }
 
     public function isSuperAdmin() {
-        return in_array($this->user->roles_id, config('rolecms.super_admin_roles'));
+        return in_array($this->roles_id, config('rolecms.roles_super_admin'));
     }
 
     public function is($role = '') {
@@ -22,7 +22,7 @@ trait HasRoleCms {
 
     public function hasAccess($action) {
 
-        if (config('rolecms.check_super_admin')) {
+        if (!config('rolecms.check_super_admin')) {
             if ($this->isSuperAdmin()) {
                 return true;
             }

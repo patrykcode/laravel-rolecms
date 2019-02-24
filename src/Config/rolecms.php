@@ -1,19 +1,41 @@
 <?php
 
 return [
+    /*
+     |--------------------------------------------------------------------------
+     |  Default Route action
+     |--------------------------------------------------------------------------
+     */
     'default_route' => 'test.read',
+    
+    /*
+     |--------------------------------------------------------------------------
+     |  Super admin roles array
+     |--------------------------------------------------------------------------
+     */
+    
     'roles_super_admin' => [1],
-    'check_super_admin' => false,
+    
+    /*
+     |--------------------------------------------------------------------------
+     |  Check abilities for super admin
+     |--------------------------------------------------------------------------
+     */
+    
+    'check_super_admin' => true,
+    
+    /*
+     |--------------------------------------------------------------------------
+     |  Abilities list
+     |--------------------------------------------------------------------------
+     */
+    
     'abilities' => [
-        'test' => ['create', 'read', 'edit', 'delete'],
-//        'articles' => ['read', 'create', 'edit', 'delete'],
-//        'galleries' => ['read', 'create', 'edit', 'delete'],
-//        'news' => ['read', 'create', 'edit', 'delete'],
-//        'settings' => ['read', 'edit', 'delete'],
-//        'roles' => ['read', 'create', 'edit', 'delete'],
-//        'sliders' => ['read', 'create', 'edit', 'delete'],
-//        'user' => ['read', 'create', 'edit', 'delete'],
-//        'modules' => ['edit'],
-//        'crop' => ['read'],
+        'test' => [
+            'create',
+            'read',
+            'edit',
+            'delete'
+        ],
     ]
 ];

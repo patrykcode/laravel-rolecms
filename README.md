@@ -9,7 +9,14 @@ composer.json
         }
 }
 ```
+App\Http\Karnel.php
+```
+protected $routeMiddleware = [
+    ...
+        'role' => \RoleCms\Middleware\RoleCms::class,
+]
 
+```
 config/app.php
 
 ```
@@ -44,6 +51,16 @@ Config.rolecms.php
             'delete'
         ],
     ]
+ ```
+ ## How use
+ 
+ Install tables
+ ```
+ composer dump-autoload
+ //install table or migrate:fresh --seed
+ roleCms:install
+ //and seeder
+ php artisan db:seed --class=RolesTableSeeder
  ```
  routes/web.php
 

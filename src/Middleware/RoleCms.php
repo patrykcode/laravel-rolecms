@@ -4,6 +4,7 @@ namespace RoleCms\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Auth;
+use \Illuminate\Auth\Access\AuthorizationException;
 
 class RoleCms {
 
@@ -11,11 +12,14 @@ class RoleCms {
 
     public function handle($request, Closure $next, $role = null) {
 
-        if ($role && Auth::user()->is($role)) {
-            return $next($request);
+        if (Auth::check()) {
+            if ($role && Auth::user()->is($role)) {
+                return $next($request);
+            }
         }
 
-        return redirect()->route(config('rolecms.default_route'));
+        throw new AuthorizationException();
+        return;
     }
 
 }

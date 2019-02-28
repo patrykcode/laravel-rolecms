@@ -65,7 +65,9 @@ Config.rolecms.php
  routes/web.php
 
 ```
-Route::get('/', 'testController@index')->name('test.read')->middleware('role:SuperAdmin|Admin','can:test.read');
+Route::get('/', 'testController@index')
+        ->name('test.read')
+        ->middleware('role:SuperAdmin|Admin','can:test.read');
 ```
 or
 ```
